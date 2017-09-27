@@ -8,8 +8,4 @@ data class AddresseeMail(
         val mailAddress: String = "",
         @Id @GeneratedValue(strategy = GenerationType.AUTO)
         val id: Long = 0
-){
-    override fun toString(): String {
-        return "AddresseeMail(id=$id, mailAddress='$mailAddress')"
-    }
-}
+)

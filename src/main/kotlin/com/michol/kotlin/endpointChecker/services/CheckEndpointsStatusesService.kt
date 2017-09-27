@@ -15,17 +15,11 @@ import java.util.function.Consumer
 @Service
 class CheckEndpointsStatusesService(
         private val connectionTools: ConnectionTools,
-        private val endpointRepository: EndpointRepository
+        private val endpointRepository: EndpointRepository,
+        private val messageSender : IMessageSender
 )
 {
     private val logger = LoggerFactory.getLogger(CheckEndpointsStatusesService::class.java)
-
-    private lateinit var messageSender : IMessageSender
-
-    @Autowired
-    fun messageSender(messageSender: IMessageSender) {
-        this.messageSender = messageSender
-    }
 
     @Async
     @Scheduled(fixedDelay = 6000)
@@ -35,8 +29,8 @@ class CheckEndpointsStatusesService(
         endpoints.forEach(Consumer { endpoint ->
             run {
                 val status = connectionTools.getUrlStatus(endpoint.url, 300)
-                logger.info(endpoint.url+" status "+status.toString())
-                if (status != 200) messageSender.sendMessage(EndpointStatusResponse(HttpStatus.valueOf(status), endpoint.url).toString())
+                logger.info(endpoint.url + " status " + status.toString())
+                if (status != 200) messageSender.sendMessage(EndpointStatusResponse(HttpStatus.valueOf(status), endpoint.url).toString(),endpoint.url)
             }
         })
     }

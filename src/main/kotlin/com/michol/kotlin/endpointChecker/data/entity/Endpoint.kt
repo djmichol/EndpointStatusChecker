@@ -10,8 +10,4 @@ data class Endpoint(
         val url: String = "",
         @Id @GeneratedValue(strategy = GenerationType.AUTO)
          val id: Long = 0
-){
-    override fun toString(): String {
-        return "Endpoint(id=$id, url='$url')"
-    }
-}
+)
