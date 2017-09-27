@@ -9,7 +9,7 @@ import javax.persistence.Id
 data class Endpoint(
         val url: String = "",
         @Id @GeneratedValue(strategy = GenerationType.AUTO)
-        private val id: Long = 0
+         val id: Long = 0
 ){
     override fun toString(): String {
         return "Endpoint(id=$id, url='$url')"
