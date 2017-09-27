@@ -1,2 +1,3 @@
 # EndpointStatusChecker
-Simple api to test endpoints statuses
+Simple api to test endpoints statuses.
+
