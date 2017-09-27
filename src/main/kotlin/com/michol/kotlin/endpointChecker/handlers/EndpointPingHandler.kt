@@ -2,7 +2,7 @@ package com.michol.kotlin.endpointChecker.handlers
 
 import com.michol.kotlin.endpointChecker.data.response.EndpointStatusResponse
 import com.michol.kotlin.endpointChecker.repository.EndpointRepository
-import com.michol.kotlin.endpointChecker.services.ConnectionTools
+import com.michol.kotlin.endpointChecker.tools.ConnectionTools
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Component
 

@@ -1,4 +1,4 @@
-package com.michol.kotlin.endpointChecker.services
+package com.michol.kotlin.endpointChecker.tools
 
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Component

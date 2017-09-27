@@ -1,6 +1,6 @@
 package com.michol.kotlin.endpointChecker
 
-import com.michol.kotlin.endpointChecker.services.ConnectionTools
+import com.michol.kotlin.endpointChecker.tools.ConnectionTools
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

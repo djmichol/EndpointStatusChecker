@@ -1,4 +1,4 @@
-package com.michol.kotlin.endpointChecker.services
+package com.michol.kotlin.endpointChecker.components
 
 interface IMessageSender {
 
