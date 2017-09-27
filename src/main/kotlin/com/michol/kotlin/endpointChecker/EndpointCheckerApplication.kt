@@ -1,6 +1,7 @@
 package com.michol.kotlin.endpointChecker
 
 import com.michol.kotlin.endpointChecker.configuration.AsyncConfiguration
+import com.michol.kotlin.endpointChecker.configuration.MessageSenderConfiguration
 import com.michol.kotlin.endpointChecker.data.entity.AddresseeMail
 import com.michol.kotlin.endpointChecker.data.entity.Endpoint
 import com.michol.kotlin.endpointChecker.repository.AddresseeMailRepository
@@ -16,7 +17,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableJpaRepositories
-@Import(AsyncConfiguration::class)
+@Import(AsyncConfiguration::class, MessageSenderConfiguration::class)
 class KotlinFirstWebAppApplication{
     @Bean
     fun init(endpointRepository: EndpointRepository, addresseeMailRepository: AddresseeMailRepository) = CommandLineRunner {

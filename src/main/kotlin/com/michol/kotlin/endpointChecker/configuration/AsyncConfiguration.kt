@@ -42,9 +42,4 @@ class AsyncConfiguration : AsyncConfigurer{
     fun taskScheduler(): TaskScheduler {
         return ConcurrentTaskScheduler()
     }
-
-    @Bean
-    fun messageSender(addresseeMailRepository: AddresseeMailRepository, javaMailSender: JavaMailSender, environment: Environment):IMessageSender{
-        return MailSender(addresseeMailRepository, javaMailSender, environment)
-    }
 }
